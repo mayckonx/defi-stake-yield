@@ -1,0 +1,30 @@
+dependencies:
+  - smartcontractkit/chainlink-brownie-contracts@0.2.2
+  - OpenZeppelin/openzeppelin-contracts@4.3.2
+  - aave/protocol-v2@1.0.1
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.2"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.3.2"
+      - "@aave=aave/protocol-v2@1.0.1"
+networks:
+  development:
+    verify: False
+  kovan:
+    weth_token: "0xd0a1e359811322d97991e03f863a0c30c2cf029c"
+    lending_pool_addresses_provider: "0x88757f2f99175387aB4C6a4b3067c77A695b0349"
+    dai_usd_price_feed: "0x777A68032a88E5A84678A77Af2CD65A7b3c0775a"
+    eth_usd_price_feed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    dai_token: "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD"
+    fau_token: "0xFab46E002BbF0b4509813474841E0716E6730136"
+    verify: True
+  mainnet-fork:
+    weth_token: "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"
+    lending_pool_addresses_provider: "0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5"
+    dai_eth_price_feed: "0x773616E4d11A78F511299002da57A0a94577F1f4"
+    dai_token: "0x6b175474e89094c44da98b954eedeac495271d0f"
+    verify: True
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
